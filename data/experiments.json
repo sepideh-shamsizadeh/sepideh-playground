@@ -1,0 +1,325 @@
+[
+  {
+    "id": "LAB-001",
+    "slug": "dinov3",
+    "title": "DINOv3",
+    "domain": "Computer Vision",
+    "status": "Backlog",
+    "planned": "2026-12-01",
+    "estimatedHours": 8,
+    "actualHours": null,
+    "objective": "Understand DINOv3 well enough to explain its principles, implement or use it appropriately, and evaluate its limitations.",
+    "project": "Extract pretrained patch embeddings, visualize PCA and build image retrieval.",
+    "evaluation": "Compare top-k retrieval on a small labeled image set; report errors and runtime.",
+    "technologies": [
+      "DINOv3",
+      "PyTorch"
+    ],
+    "links": {
+      "issue": "https://github.com/sepideh-shamsizadeh/applied-ai-robotics-lab/issues/1"
+    }
+  },
+  {
+    "id": "LAB-002",
+    "slug": "kalman-filter",
+    "title": "Kalman Filter",
+    "domain": "State Estimation & Sensor Fusion",
+    "status": "Backlog",
+    "planned": "2026-12-03",
+    "estimatedHours": 8,
+    "actualHours": null,
+    "objective": "Understand Kalman Filter well enough to explain its principles, implement or use it appropriately, and evaluate its limitations.",
+    "project": "Implement a constant-velocity filter in NumPy and simulate noisy position measurements.",
+    "evaluation": "Compare raw and filtered RMSE; vary Q and R.",
+    "technologies": [
+      "Python",
+      "NumPy"
+    ],
+    "links": {
+      "issue": "https://github.com/sepideh-shamsizadeh/applied-ai-robotics-lab/issues/2"
+    }
+  },
+  {
+    "id": "LAB-003",
+    "slug": "clip",
+    "title": "CLIP",
+    "domain": "Multimodal AI",
+    "status": "Backlog",
+    "planned": "2026-12-08",
+    "estimatedHours": 8,
+    "actualHours": null,
+    "objective": "Understand CLIP well enough to explain its principles, implement or use it appropriately, and evaluate its limitations.",
+    "project": "Build text-to-image retrieval and zero-shot classification with a pretrained model.",
+    "evaluation": "Measure top-k accuracy and prompt sensitivity.",
+    "technologies": [
+      "CLIP",
+      "PyTorch"
+    ],
+    "links": {
+      "issue": "https://github.com/sepideh-shamsizadeh/applied-ai-robotics-lab/issues/3"
+    }
+  },
+  {
+    "id": "LAB-004",
+    "slug": "gazebo-turtlebot3",
+    "title": "Gazebo & TurtleBot3",
+    "domain": "Robotics Simulation",
+    "status": "Backlog",
+    "planned": "2026-12-10",
+    "estimatedHours": 8,
+    "actualHours": null,
+    "objective": "Understand Gazebo & TurtleBot3 well enough to explain its principles, implement or use it appropriately, and evaluate its limitations.",
+    "project": "Launch a ROS 2 Jazzy-compatible TurtleBot3 simulation; teleoperate and inspect sensor topics and TF.",
+    "evaluation": "Record topic rates, validate frames and demonstrate a controlled stop.",
+    "technologies": [
+      "ROS 2 Jazzy",
+      "Gazebo",
+      "TurtleBot3"
+    ],
+    "links": {
+      "issue": "https://github.com/sepideh-shamsizadeh/applied-ai-robotics-lab/issues/4"
+    }
+  },
+  {
+    "id": "LAB-005",
+    "slug": "sam-2",
+    "title": "SAM 2",
+    "domain": "Computer Vision",
+    "status": "Backlog",
+    "planned": "2026-12-15",
+    "estimatedHours": 8,
+    "actualHours": null,
+    "objective": "Understand SAM 2 well enough to explain its principles, implement or use it appropriately, and evaluate its limitations.",
+    "project": "Segment objects with point and box prompts using a pretrained model.",
+    "evaluation": "Compare IoU against a small set of annotated masks and record latency.",
+    "technologies": [
+      "SAM 2",
+      "PyTorch"
+    ],
+    "links": {
+      "issue": "https://github.com/sepideh-shamsizadeh/applied-ai-robotics-lab/issues/5"
+    }
+  },
+  {
+    "id": "LAB-006",
+    "slug": "extended-kalman-filter",
+    "title": "Extended Kalman Filter",
+    "domain": "State Estimation & Sensor Fusion",
+    "status": "Backlog",
+    "planned": "2026-12-17",
+    "estimatedHours": 8,
+    "actualHours": null,
+    "objective": "Understand Extended Kalman Filter well enough to explain its principles, implement or use it appropriately, and evaluate its limitations.",
+    "project": "Implement nonlinear planar robot estimation and fuse simulated wheel odometry and IMU.",
+    "evaluation": "Compare trajectory RMSE against odometry alone and vary noise.",
+    "technologies": [
+      "Python",
+      "NumPy"
+    ],
+    "links": {
+      "issue": "https://github.com/sepideh-shamsizadeh/applied-ai-robotics-lab/issues/6"
+    }
+  },
+  {
+    "id": "LAB-007",
+    "slug": "depth-anything-v2",
+    "title": "Depth Anything V2",
+    "domain": "Robotic Perception",
+    "status": "Backlog",
+    "planned": "2026-12-22",
+    "estimatedHours": 8,
+    "actualHours": null,
+    "objective": "Understand Depth Anything V2 well enough to explain its principles, implement or use it appropriately, and evaluate its limitations.",
+    "project": "Estimate relative depth on indoor images and visualize depth maps.",
+    "evaluation": "Evaluate relative depth ordering and failure cases; distinguish metric and relative depth.",
+    "technologies": [
+      "Depth Anything V2",
+      "PyTorch"
+    ],
+    "links": {
+      "issue": "https://github.com/sepideh-shamsizadeh/applied-ai-robotics-lab/issues/7"
+    }
+  },
+  {
+    "id": "LAB-008",
+    "slug": "sensor-fusion",
+    "title": "Sensor Fusion",
+    "domain": "State Estimation & Sensor Fusion",
+    "status": "Backlog",
+    "planned": "2026-12-24",
+    "estimatedHours": 8,
+    "actualHours": null,
+    "objective": "Understand Sensor Fusion well enough to explain its principles, implement or use it appropriately, and evaluate its limitations.",
+    "project": "Combine simulated asynchronous range and odometry measurements.",
+    "evaluation": "Compare fused and single-sensor error and test missing measurements.",
+    "technologies": [
+      "Python",
+      "NumPy"
+    ],
+    "links": {
+      "issue": "https://github.com/sepideh-shamsizadeh/applied-ai-robotics-lab/issues/8"
+    }
+  },
+  {
+    "id": "LAB-009",
+    "slug": "detr",
+    "title": "DETR",
+    "domain": "Computer Vision",
+    "status": "Backlog",
+    "planned": "2026-12-29",
+    "estimatedHours": 8,
+    "actualHours": null,
+    "objective": "Understand DETR well enough to explain its principles, implement or use it appropriately, and evaluate its limitations.",
+    "project": "Run pretrained object detection and study matching and transformer queries.",
+    "evaluation": "Evaluate precision/recall on a small annotated set and record inference latency.",
+    "technologies": [
+      "DETR",
+      "PyTorch"
+    ],
+    "links": {
+      "issue": "https://github.com/sepideh-shamsizadeh/applied-ai-robotics-lab/issues/9"
+    }
+  },
+  {
+    "id": "LAB-010",
+    "slug": "icp",
+    "title": "ICP",
+    "domain": "Robotic Perception",
+    "status": "Backlog",
+    "planned": "2026-12-31",
+    "estimatedHours": 8,
+    "actualHours": null,
+    "objective": "Understand ICP well enough to explain its principles, implement or use it appropriately, and evaluate its limitations.",
+    "project": "Register transformed point clouds with point-to-point ICP.",
+    "evaluation": "Measure rotation/translation error and sensitivity to initialization and noise.",
+    "technologies": [
+      "Open3D",
+      "NumPy"
+    ],
+    "links": {
+      "issue": "https://github.com/sepideh-shamsizadeh/applied-ai-robotics-lab/issues/10"
+    }
+  },
+  {
+    "id": "LAB-011",
+    "slug": "onnx",
+    "title": "ONNX",
+    "domain": "Model Optimization & Deployment",
+    "status": "Backlog",
+    "planned": "2027-01-05",
+    "estimatedHours": 8,
+    "actualHours": null,
+    "objective": "Understand ONNX well enough to explain its principles, implement or use it appropriately, and evaluate its limitations.",
+    "project": "Export a small PyTorch model and run ONNX Runtime inference.",
+    "evaluation": "Compare numerical agreement and latency with PyTorch.",
+    "technologies": [
+      "ONNX",
+      "ONNX Runtime"
+    ],
+    "links": {
+      "issue": "https://github.com/sepideh-shamsizadeh/applied-ai-robotics-lab/issues/11"
+    }
+  },
+  {
+    "id": "LAB-012",
+    "slug": "slam",
+    "title": "SLAM",
+    "domain": "SLAM & Localization",
+    "status": "Backlog",
+    "planned": "2027-01-07",
+    "estimatedHours": 8,
+    "actualHours": null,
+    "objective": "Understand SLAM well enough to explain its principles, implement or use it appropriately, and evaluate its limitations.",
+    "project": "Map a simulated indoor environment using TurtleBot3 and a compatible ROS 2 SLAM package.",
+    "evaluation": "Compare map against simulated layout and investigate trajectory drift.",
+    "technologies": [
+      "ROS 2 Jazzy",
+      "Gazebo"
+    ],
+    "links": {
+      "issue": "https://github.com/sepideh-shamsizadeh/applied-ai-robotics-lab/issues/12"
+    }
+  },
+  {
+    "id": "LAB-013",
+    "slug": "tensorrt",
+    "title": "TensorRT",
+    "domain": "Model Optimization & Deployment",
+    "status": "Backlog",
+    "planned": "2027-01-12",
+    "estimatedHours": 8,
+    "actualHours": null,
+    "objective": "Understand TensorRT well enough to explain its principles, implement or use it appropriately, and evaluate its limitations.",
+    "project": "Build and benchmark an inference engine if compatible NVIDIA hardware is available; otherwise document prerequisites and prepare export pipeline.",
+    "evaluation": "Compare latency, throughput and numerical agreement on the same GPU; defer GPU metrics if unavailable.",
+    "technologies": [
+      "TensorRT",
+      "ONNX"
+    ],
+    "links": {
+      "issue": "https://github.com/sepideh-shamsizadeh/applied-ai-robotics-lab/issues/13"
+    }
+  },
+  {
+    "id": "LAB-014",
+    "slug": "amcl",
+    "title": "AMCL",
+    "domain": "SLAM & Localization",
+    "status": "Backlog",
+    "planned": "2027-01-14",
+    "estimatedHours": 8,
+    "actualHours": null,
+    "objective": "Understand AMCL well enough to explain its principles, implement or use it appropriately, and evaluate its limitations.",
+    "project": "Localize TurtleBot3 in a known simulated map using AMCL.",
+    "evaluation": "Measure convergence time and pose error against simulation ground truth.",
+    "technologies": [
+      "ROS 2 Jazzy",
+      "Nav2",
+      "RViz"
+    ],
+    "links": {
+      "issue": "https://github.com/sepideh-shamsizadeh/applied-ai-robotics-lab/issues/14"
+    }
+  },
+  {
+    "id": "LAB-015",
+    "slug": "quantization",
+    "title": "Quantization",
+    "domain": "Model Optimization & Deployment",
+    "status": "Backlog",
+    "planned": "2027-01-19",
+    "estimatedHours": 8,
+    "actualHours": null,
+    "objective": "Understand Quantization well enough to explain its principles, implement or use it appropriately, and evaluate its limitations.",
+    "project": "Quantize a small model using supported CPU or GPU tooling.",
+    "evaluation": "Compare model size, accuracy and latency against FP32.",
+    "technologies": [
+      "PyTorch",
+      "ONNX Runtime"
+    ],
+    "links": {
+      "issue": "https://github.com/sepideh-shamsizadeh/applied-ai-robotics-lab/issues/15"
+    }
+  },
+  {
+    "id": "LAB-016",
+    "slug": "nav2-path-planning",
+    "title": "Nav2 & Path Planning",
+    "domain": "Navigation & Planning",
+    "status": "Backlog",
+    "planned": "2027-01-21",
+    "estimatedHours": 8,
+    "actualHours": null,
+    "objective": "Understand Nav2 & Path Planning well enough to explain its principles, implement or use it appropriately, and evaluate its limitations.",
+    "project": "Configure simulated TurtleBot3 navigation and inspect global and local planning.",
+    "evaluation": "Measure goal success, travel time and collisions across test scenarios.",
+    "technologies": [
+      "ROS 2 Jazzy",
+      "Nav2",
+      "TurtleBot3"
+    ],
+    "links": {
+      "issue": "https://github.com/sepideh-shamsizadeh/applied-ai-robotics-lab/issues/16"
+    }
+  }
+]

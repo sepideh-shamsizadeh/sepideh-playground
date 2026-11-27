@@ -1,0 +1,13 @@
+{
+  "name": "sepideh-playground",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node src/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "lint": "node src/check.mjs",
+    "dev": "node src/serve.mjs"
+  }
+}
