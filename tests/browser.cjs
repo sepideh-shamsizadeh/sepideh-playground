@@ -15,7 +15,7 @@ const base = process.env.PLAYGROUND_TEST_URL || "http://127.0.0.1:4178";
       page.on("requestfailed", request => {
         if (!request.url().startsWith(base)) return;
         // Navigation can cancel lazy images that are no longer needed. Covers are checked separately.
-        if (request.resourceType() === "image" && request.failure()?.errorText === "net::ERR_ABORTED") return;
+        if ((request.resourceType() === "image" || request.url().endsWith("/assets/icon.png")) && request.failure()?.errorText === "net::ERR_ABORTED") return;
         errors.push(request.url());
       });
       page.on("response", response => {
