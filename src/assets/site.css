@@ -135,7 +135,8 @@ summary { cursor: pointer; font-weight: 650; padding-block: .35rem; }
 .workflow span, .workflow strong { display: block; }
 .workflow span { font: 500 .875rem/1.4 var(--mono); color: var(--accent); margin-bottom: .25rem; }
 .filters { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr auto; align-items: end; gap: .8rem; padding: .85rem; margin-bottom: .9rem; }
-.filters label { display: grid; gap: .3rem; min-width: 0; font-size: .875rem; color: var(--muted); font-weight: 650; }
+.filters > div { display: grid; gap: .3rem; min-width: 0; }
+.filters label { font-size: .875rem; color: var(--muted); font-weight: 650; }
 .filters :is(input,select) { min-width: 0; width: 100%; min-height: 44px; border: 1px solid var(--control); border-radius: 7px; background: var(--bg); color: var(--text); padding: .45rem .55rem; }
 .filters input::placeholder { color: var(--muted); opacity: 1; }
 .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .85rem; }
@@ -185,7 +186,7 @@ summary { cursor: pointer; font-weight: 650; padding-block: .35rem; }
   .hero-grid, .cards, .months, .detail-grid { grid-template-columns: 1fr; }
   .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .filters label:first-child { grid-column: 1 / -1; }
+  .filters > div:first-child { grid-column: 1 / -1; }
   .domain-progress li { grid-template-columns: minmax(0, 1fr) auto; }
   .domain-progress li progress { grid-row: 2; grid-column: 1 / -1; }
   .workflow li { overflow-wrap: anywhere; }

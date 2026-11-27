@@ -8,6 +8,7 @@ const base = process.env.PLAYGROUND_TEST_URL || "http://127.0.0.1:4178";
     for (const width of [1280, 390]) {
       const context = await browser.newContext({ viewport: { width, height: 900 }, colorScheme: "dark" });
       const page = await context.newPage();
+      page.setDefaultTimeout(7000);
       const errors = [];
       page.on("pageerror", error => errors.push(error.message));
       page.on("console", message => { if (message.type() === "error") errors.push(message.text()); });

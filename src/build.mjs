@@ -179,11 +179,11 @@ const pages = [
   <section class="section" id="experiments" aria-labelledby="experiments-heading">
     <div class="section-heading"><h2 id="experiments-heading">Experiments</h2><p id="filter-status" role="status">${experiments.length} experiments</p></div>
     <form id="filters" class="filters panel" hidden>
-      <label>Search experiments<input type="search" name="query" maxlength="120" placeholder="Topic, Lab ID, or technology"></label>
-      <label>Domain<select name="domain"><option value="">All domains</option>
-        ${stats.domains.map(group => `<option>${e(group.name)}</option>`).join("")}</select></label>
-      <label>Status<select name="status"><option value="">All statuses</option>${statuses.map(value => `<option>${e(value)}</option>`).join("")}</select></label>
-      <label>Sort<select name="sort"><option value="date">Planned date</option><option value="latest">Latest planned</option><option value="id">Lab ID</option></select></label>
+      <div><label for="filter-query">Search experiments</label><input id="filter-query" type="search" name="query" maxlength="120" placeholder="Topic, Lab ID, or technology"></div>
+      <div><label for="filter-domain">Domain</label><select id="filter-domain" name="domain"><option value="">All domains</option>
+        ${stats.domains.map(group => `<option>${e(group.name)}</option>`).join("")}</select></div>
+      <div><label for="filter-workflow">Status</label><select id="filter-workflow" name="status"><option value="">All statuses</option>${statuses.map(value => `<option>${e(value)}</option>`).join("")}</select></div>
+      <div><label for="filter-sort">Sort</label><select id="filter-sort" name="sort"><option value="date">Planned date</option><option value="latest">Latest planned</option><option value="id">Lab ID</option></select></div>
       <button type="reset">Clear filters</button>
     </form>
     <p id="filter-empty" class="panel panel-pad" hidden>No experiments match these filters.</p>
