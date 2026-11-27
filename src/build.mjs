@@ -19,7 +19,7 @@ const personalSite = "https://sepideh.io/";
 const technicalBlog = personalSite + "blog/";
 const nav = [["/", "Home"], ["/lab/", "Applied AI & Robotics Lab"], [technicalBlog, "Blog"], [personalSite, "Personal Website"]];
 const external = [
-  [personalSite, "Professional site"], [technicalBlog, "Technical blog"],
+  ["https://sepideh.io/", "Professional site"], ["https://sepideh.io/year-archive/", "Technical blog"],
   ["https://github.com/sepideh-shamsizadeh", "GitHub"], ["https://sepideh.io/tishtar/", "TISHTAR"],
   ["https://sepideh.io/drill/", "DRILL"], ["https://github.com/sepideh-shamsizadeh/deep-learning", "MiniDL"]
 ];
@@ -89,7 +89,7 @@ function layout(title, descriptionText, path, active, content) {
   <main id="main" class="wrap${active === "/lab/" && path !== "/lab/" ? " wrap--read technical-article" : ""}">${content}</main>
   <footer class="site-footer"><div class="site-footer__inner">
     <span>© ${new Date().getUTCFullYear()} Sepideh Shamsizadeh · Zurich, Switzerland</span>
-    <nav aria-label="Related sites">${link("/about/", "About Playground")}${external.map(([href, label]) => link(href, label)).join("")}</nav>
+    <nav aria-label="Related sites">${external.map(([href, label]) => link(href, label)).join("")}</nav>
   </div></footer>
 </body></html>`;
 }
