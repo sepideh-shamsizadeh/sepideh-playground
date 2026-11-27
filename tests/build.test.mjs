@@ -12,6 +12,12 @@ test("build generates every static detail page and indexes only production", () 
     assert.equal(/noindex/.test(read("index.html")), mode === "preview");
     assert.match(read("index.html"), /canonical" href="https:\/\/playground\.sepideh\.io\//);
     assert.match(read("robots.txt"), mode === "production" ? /Allow: \// : /Disallow: \//);
+    const home = read("index.html");
+    const nav = home.match(/<nav id="primary-nav"[^>]*>(.*?)<\/nav>/)?.[1] ?? "";
+    assert.deepEqual(Array.from(nav.matchAll(/href="([^"]+)"/g), match => match[1]),
+      ["/", "/lab/", "https://sepideh.io/blog/", "https://sepideh.io/"]);
+    assert.match(home, /aria-controls="primary-nav" aria-expanded="false"/);
+    assert.match(read("lab/dinov3/index.html"), /href="\/lab\/" aria-current="location">Applied AI &amp; Robotics Lab/);
     assert.equal((read("lab/index.html").match(/data-id="LAB-/g) ?? []).length, entries.length);
     for (const item of entries) {
       const html = read(`lab/${item.slug}/index.html`);
