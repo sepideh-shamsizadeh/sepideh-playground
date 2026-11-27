@@ -6,7 +6,7 @@ import { extname, join, resolve, sep } from "node:path";
 const build = spawnSync(process.execPath, ["src/build.mjs"], { stdio: "inherit" });
 if (build.status !== 0) process.exit(build.status || 1);
 const root = resolve("dist");
-const types = { ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".mjs": "text/javascript; charset=utf-8", ".xml": "application/xml", ".txt": "text/plain", ".png": "image/png", ".webp": "image/webp", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".avif": "image/avif" };
+const types = { ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".mjs": "text/javascript; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".svg": "image/svg+xml", ".woff2": "font/woff2", ".xml": "application/xml", ".txt": "text/plain", ".png": "image/png", ".webp": "image/webp", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".avif": "image/avif" };
 const headers = JSON.parse(await (await import("node:fs/promises")).readFile("vercel.json", "utf8")).headers[0].headers;
 const port = Number(process.env.PORT ?? 4178);
 createServer((request, response) => {

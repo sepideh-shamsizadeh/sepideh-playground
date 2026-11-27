@@ -32,6 +32,7 @@ const base = process.env.PLAYGROUND_TEST_URL || "http://127.0.0.1:4178";
       const search = page.getByRole("searchbox", { name: "Search experiments" });
       const visibleCards = page.locator(".experiment:visible");
       assert.equal(await visibleCards.count(), 16);
+      await page.getByText("Progress and hours", { exact: true }).click();
       assert.equal(await page.locator(".metrics dd").first().innerText(), "16");
       await page.getByText("Progress by domain", { exact: true }).click();
       assert.ok(await page.locator(".domain-progress progress").first().isVisible());

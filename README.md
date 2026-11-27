@@ -6,9 +6,10 @@ An independent engineering site for applied AI, robotic perception, and autonomo
 
 ## Run locally
 
-Use Node.js 22 or later. The site has no package dependencies.
+Use Node.js 22 or later.
 
 ```sh
+npm ci
 npm run dev
 npm run lint
 npm test
@@ -20,6 +21,7 @@ Open `http://127.0.0.1:4178/`. The dev server rebuilds at startup. Run the build
 | Path | Purpose |
 | --- | --- |
 | `data/experiments.json` | Reviewed metadata snapshot |
+| `content/lab/` | Long-form Markdown articles, beginning with DINOv3 |
 | `src/build.mjs` | Static home, lab, roadmap, detail pages, and SEO generation |
 | `src/assets/` | Styles, shared validation and statistics, search, filters and theme |
 | `src/serve.mjs` | Local static preview |

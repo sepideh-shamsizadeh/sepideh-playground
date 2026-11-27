@@ -17,7 +17,7 @@ test("build generates every static detail page and indexes only production", () 
       const html = read(`lab/${item.slug}/index.html`);
       assert.ok(html.includes(item.links.issue), item.id);
       assert.match(html, /Evaluation plan/);
-      assert.match(html, /Actual hours<\/dt><dd>Not logged/);
+      assert.match(html, /Actual hours Not logged/);
     }
     assert.equal(existsSync("dist/data/experiments.json"), false);
     assert.equal(existsSync("dist/404.html"), true);

@@ -46,7 +46,7 @@ export function validate(entries) {
     if (!Array.isArray(item.technologies) || !item.technologies.every(text)) fail("invalid technologies");
     if (!record(item.links) || Object.entries(item.links).some(([key, value]) =>
       !Object.hasOwn(artifacts, key) || !(https(value) || key === "demo" && localDemo(value)))) fail("invalid artifact link");
-    if (item.cover && (!record(item.cover) || !asset(item.cover.src) || !text(item.cover.alt))) fail("invalid cover");
+    if (item.cover && (!record(item.cover) || !asset(item.cover.src) || !text(item.cover.alt) || (item.cover.caption !== undefined && !text(item.cover.caption)))) fail("invalid cover");
     if (item.visualization && (!record(item.visualization) || !kinds.includes(item.visualization.kind) ||
         !text(item.visualization.caption) || !(asset(item.visualization.src) || https(item.visualization.url) ||
           item.visualization.kind === kinds[0] && localDemo(item.visualization.url)))) fail("invalid visualization");

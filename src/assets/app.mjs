@@ -7,7 +7,7 @@ function loadTheme() {
 function themeLabel() {
   const dark = document.documentElement.dataset.theme === "dark" ||
     (!document.documentElement.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
-  themeButton.textContent = dark ? "Light mode" : "Dark mode";
+  themeButton.setAttribute("aria-label", dark ? "Light mode" : "Dark mode");
   return dark;
 }
 const initial = loadTheme();

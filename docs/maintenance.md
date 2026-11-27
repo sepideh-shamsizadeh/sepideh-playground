@@ -7,11 +7,21 @@ Update the matching GitHub issue and Project 13 first, then review the local sna
 1. Add one entry with a unique `LAB-NNN` ID, a stable lowercase slug, domain, status, ISO planned date, objective, mini-project, evaluation plan, technologies, and estimated hours.
 2. Keep `actualHours: null` until work is logged. Record actual hours even while a lab is active. A Done lab requires its completion date and actual hours.
 3. Add verified links in `links.issue`, `links.source`, `links.article`, and `links.demo` when available. Omit missing artifacts. Add references as label and HTTPS URL pairs. An optional `tishtar` label and URL can connect a validated result to a milestone.
-4. Use `detail` for substantive problem, motivation, learning objectives, implementation, environment, reproduction, methodology, baselines, metrics, results, failure cases, or limitations text. Missing sections are omitted. Keep the full implementation and reproduction materials in the lab repository.
-5. Add a genuine cover image under `src/assets/` with alternative text. A `visualization` can be a **Live interactive demo**, **Precomputed visualization**, or **Recorded simulation**. Include a caption and a real image or HTTPS link. Build validation rejects links to missing local assets.
+4. Write the article in `content/lab/<slug>.md`. Use `dinov3.md` as the template. The generator uses metadata to fill available sections while the experiment is still planned.
+5. Add a cover under `src/assets/` and set `cover.src` and `cover.alt` in metadata. Add a caption for context and credit whenever the license requires it. The bundled covers are conceptual diagrams. To regenerate them install Pillow and run `python3 tools/draw-covers.py`.
 6. Run lint, unit tests and a local preview. Verify the new detail route and any links.
 
 For a small browser demo, place a self-contained static entry and modules under `src/demos/<slug>/`, with an `index.html`, keyboard controls, and a text explanation. Add the demo path to the experiment metadata only after testing it. Keep heavy work in a Web Worker or present precomputed figures or recorded simulation. A ROS 2 or PyTorch environment belongs in the experiment repository. Review the site CSP before introducing any embeds or external network access.
+
+## Author an experiment article
+
+Use second-level headings named Overview, Implementation, Experiments and Evaluation, Robotics Applications, and Resources. Use third-level headings for subsections. Keep progress, dates, hours and external artifact links in the metadata.
+
+- Write inline math with `$...$` and display math on separate lines between `$$` delimiters.
+- Use fenced code blocks with a language name and standard Markdown tables.
+- Put an image on its own line as `![Alternative text](/assets/figure.webp "Caption and credit")` to render a figure with a caption.
+- Set the metadata visualization link for a recorded simulation or interactive result. Use `[demo:slug]` on its own line to link to a reviewed local demo at `src/demos/slug/index.html`.
+- Link papers, reference implementations, and related articles using regular Markdown links. Keep measured results and conceptual figures clearly labelled.
 
 ## Publish a completed experiment
 
@@ -35,7 +45,7 @@ Publish the article through the existing Jekyll workflow on the professional sit
 ## Repository and Vercel
 
 1. The standalone repository is `sepideh-shamsizadeh/sepideh-playground`. The empty `main` base lets reviewers see the complete site in the foundation PR while preserving its prepared commit history. Use feature branches and PRs for subsequent changes.
-2. Use the separate `sepide/sepideh-playground` Vercel Hobby project. Select Other, Node 22 or newer, repository root, build command `npm run build`, and output directory `dist`. The committed configuration provides these settings. No package dependencies, secrets, backend, or custom environment variables are required. GitHub Actions runs lint, tests and build from the independent repository.
+2. Use the separate `sepide/sepideh-playground` Vercel Hobby project. Select Other, Node 22 or newer, repository root, build command `npm run build`, and output directory `dist`. The committed configuration provides these settings. Vercel installs the locked Node dependencies before building. No secrets, backend, or custom environment variables are required. GitHub Actions runs lint, tests and build from the independent repository.
 3. Review the deployment at its Vercel preview URL. Use an explicit Preview environment for a CLI upload, and verify the deployment is labeled Preview before sharing it. Keep preview indexing blocked. Vercel requires the first deployment in a new project to use the Production environment. Obtain explicit approval before bootstrapping. A bootstrap can use the production-only `--skip-domain` option to prevent automatic alias assignment. After bootstrapping, deploy with the explicit Preview environment and verify its target before review.
 4. After explicit approval, assign `playground.sepideh.io` to the Playground project and use the exact DNS record displayed in the project domain settings. The parent currently uses Vercel DNS. A wildcard DNS response is not proof that Playground has been attached, and HTTPS did not validate for the proposed hostname during discovery. Confirm domain ownership, authoritative DNS, automatic TLS, and HTTP-to-HTTPS redirect after attachment. Leave the apex and unrelated DNS records intact.
 5. Verify homepage, lab, all 16 detail pages, navigation, filters and search, themes, and mobile layout on the real domain. After approval, replace the professional site's Playground dropdown with a link to the new platform. Preserve `/drill/`, `/drill/communication/`, `/drill/transfer/`, `/tishtar/` and every existing article URL. Keep the old blog permalink when adding the `/blog/` alias.
