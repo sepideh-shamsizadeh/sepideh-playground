@@ -11,8 +11,16 @@ const base = process.env.PLAYGROUND_TEST_URL || "http://127.0.0.1:4178";
       page.setDefaultTimeout(7000);
       const errors = [];
       page.on("pageerror", error => errors.push(error.message));
-      page.on("console", message => { if (message.type() === "error") errors.push(message.text()); });
-      page.on("requestfailed", request => { if (request.url().startsWith(base)) errors.push(request.url()); });
+      page.on("console", message => { if (message.type() === "error") errors.push(message.text() + " " + message.location().url); });
+      page.on("requestfailed", request => {
+        if (!request.url().startsWith(base)) return;
+        if (request.url().endsWith("/assets/icon.png") && request.failure()?.errorText === "net::ERR_ABORTED") return;
+        errors.push(request.url());
+      });
+      page.on("response", response => {
+        if (response.url().startsWith(base) && response.status() >= 400) errors.push(response.url() + " " + response.status());
+      });
+      assert.equal((await context.request.get(base + "/assets/icon.png")).status(), 200);
       assert.equal((await page.goto(base + "/")).status(), 200);
       const home = page.getByRole("heading", { name: "Engineering Playground" });
       assert.ok(await home.isVisible());
@@ -45,7 +53,7 @@ const base = process.env.PLAYGROUND_TEST_URL || "http://127.0.0.1:4178";
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
       if (process.env.PLAYGROUND_SCREENSHOTS && width === 390) {
         await page.screenshot({ path: process.env.PLAYGROUND_SCREENSHOTS + "/lab-mobile.png" });
-        await page.locator("#experiments").scrollIntoViewIfNeeded();
+        await page.locator("#experiments").evaluate(element => element.scrollIntoView({ block: "start" }));
         await page.screenshot({ path: process.env.PLAYGROUND_SCREENSHOTS + "/experiments-mobile.png" });
       }
       await visibleCards.first().getByRole("link", { name: "Experiment details" }).click();

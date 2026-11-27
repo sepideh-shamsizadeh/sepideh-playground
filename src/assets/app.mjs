@@ -58,7 +58,15 @@ if (filters) {
   }
   filters.addEventListener("input", update);
   filters.addEventListener("submit", event => { event.preventDefault(); update(); });
-  filters.addEventListener("reset", () => queueMicrotask(update));
+  filters.addEventListener("reset", event => {
+    event.preventDefault();
+    for (const key of controls) {
+      const field = filters.elements[key];
+      if (field.tagName === "SELECT") field.selectedIndex = 0;
+      else field.value = "";
+    }
+    update();
+  });
   filters.hidden = false;
   update();
 }

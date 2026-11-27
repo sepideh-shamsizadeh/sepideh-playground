@@ -49,6 +49,7 @@ function layout(title, descriptionText, path, active, content) {
   <meta property="og:url" content="${origin + path}">
   <meta property="og:description" content="${e(descriptionText)}">
   <title>${e(title)} · Sepideh Playground</title>
+  <link rel="icon" href="/assets/icon.png" type="image/png">
   <link rel="stylesheet" href="/assets/site.css">
   <script type="module" src="/assets/app.mjs"></script>
 </head>
