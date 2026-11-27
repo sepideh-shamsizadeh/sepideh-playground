@@ -13,6 +13,15 @@ Update the matching GitHub issue and Project 13 first, then review the local sna
 
 For a small browser demo, place a self-contained static entry and modules under `src/demos/<slug>/`, with an `index.html`, keyboard controls, and a text explanation. Add the demo path to the experiment metadata only after testing it. Keep heavy work in a Web Worker or present precomputed figures or recorded simulation. A ROS 2 or PyTorch environment belongs in the experiment repository. Review the site CSP before introducing any embeds or external network access.
 
+## Publish a completed experiment
+
+1. Commit the implementation, reproduction steps, metrics and limitations in the lab repository. Update the related issue and Project 13 status.
+2. Update the matching Playground row with actual hours, completion date and verified source URL. Put eligible figures under `src/assets/`, with alt text and a caption. Use `visualization` to identify the kind of result.
+3. Publish the technical article on the professional site's existing blog. Set `links.article` to its verified URL and add a comparison or results link back to the experiment from the article.
+4. Run lint, tests and the static build. Open a Playground PR, review its preview, then publish only after approval.
+
+LAB-001 is ready to begin as a plan. Its issue, objective, mini-project, evaluation criteria and upstream DINOv3 reference are available from the detail page. Keep results and actual hours empty until there is evidence from the experiment.
+
 ## Dashboard rules
 
 Total is the number of validated rows. Completed means Done. In progress means Learning, Implementation, Evaluation, or Writing. Ready is queued. Published articles count distinct article URLs. Engineering hours sum numeric actual hours only and show “No hours logged” when no rows have logged time. Domain progress counts completed rows over all rows in that domain.

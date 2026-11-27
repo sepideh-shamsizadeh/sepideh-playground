@@ -17,7 +17,13 @@
     ],
     "links": {
       "issue": "https://github.com/sepideh-shamsizadeh/applied-ai-robotics-lab/issues/1"
-    }
+    },
+    "references": [
+      {
+        "label": "DINOv3 reference implementation and model documentation",
+        "url": "https://github.com/facebookresearch/dinov3"
+      }
+    ]
   },
   {
     "id": "LAB-002",
