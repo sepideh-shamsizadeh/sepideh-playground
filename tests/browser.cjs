@@ -14,7 +14,8 @@ const base = process.env.PLAYGROUND_TEST_URL || "http://127.0.0.1:4178";
       page.on("console", message => { if (message.type() === "error") errors.push(message.text() + " " + message.location().url); });
       page.on("requestfailed", request => {
         if (!request.url().startsWith(base)) return;
-        if (request.url().endsWith("/assets/icon.png") && request.failure()?.errorText === "net::ERR_ABORTED") return;
+        // Navigation can cancel lazy images that are no longer needed. Covers are checked separately.
+        if (request.resourceType() === "image" && request.failure()?.errorText === "net::ERR_ABORTED") return;
         errors.push(request.url());
       });
       page.on("response", response => {
@@ -32,6 +33,11 @@ const base = process.env.PLAYGROUND_TEST_URL || "http://127.0.0.1:4178";
       const search = page.getByRole("searchbox", { name: "Search experiments" });
       const visibleCards = page.locator(".experiment:visible");
       assert.equal(await visibleCards.count(), 16);
+      if (width === 1280) {
+        const covers = await visibleCards.locator("img").evaluateAll(images => images.map(image => image.src));
+        for (const cover of covers) assert.equal((await context.request.get(cover)).status(), 200, cover);
+      }
+      assert.equal(await page.locator("#roadmap .month li").count(), 16);
       await page.getByText("Progress and hours", { exact: true }).click();
       assert.equal(await page.locator(".metrics dd").first().innerText(), "16");
       await page.getByText("Progress by domain", { exact: true }).click();
